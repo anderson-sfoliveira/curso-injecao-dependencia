@@ -9,9 +9,9 @@ public class Main {
 		Cliente joao = new Cliente("João", "joao@xyz.com", "3499998888");
 		Cliente maria = new Cliente("Maria", "maria@xyz.com", "1177772222");
 		
-		AtivacaoClienteService ativacaoCliente = new AtivacaoClienteService();
-		ativacaoCliente.ativar(joao);
-		ativacaoCliente.ativar(maria);
+///		AtivacaoClienteService ativacaoCliente = new AtivacaoClienteService();
+//		ativacaoCliente.ativar(joao);
+//		ativacaoCliente.ativar(maria);
 	}
 	
 }

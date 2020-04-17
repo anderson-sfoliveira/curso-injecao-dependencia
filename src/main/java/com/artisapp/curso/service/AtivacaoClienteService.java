@@ -1,11 +1,20 @@
 package com.artisapp.curso.service;
 
-import com.artisapp.curso.modelo.Cliente;
-import com.artisapp.curso.notificacao.NotificadorEmail;
+import org.springframework.stereotype.Component;
 
+import com.artisapp.curso.modelo.Cliente;
+import com.artisapp.curso.notificacao.Notificador;
+
+@Component
 public class AtivacaoClienteService {
 
-	private NotificadorEmail notificador = new NotificadorEmail();
+	private Notificador notificador;
+	
+	public AtivacaoClienteService(Notificador notificador) {
+		this.notificador = notificador;
+		
+		System.out.println("AtivacaoClienteService: " + notificador);
+	}
 	
 	public void ativar(Cliente cliente) {
 		cliente.ativar();
