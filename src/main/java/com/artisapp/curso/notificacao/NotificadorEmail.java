@@ -1,14 +1,15 @@
 package com.artisapp.curso.notificacao;
 
+import org.springframework.stereotype.Component;
+
 import com.artisapp.curso.modelo.Cliente;
 
+@Component
 public class NotificadorEmail implements Notificador {
 
 	private boolean caixaAlta;
-	private String hostServidorSmtp;
 	
-	public NotificadorEmail(String hostServidorSmtp) {
-		this.hostServidorSmtp = hostServidorSmtp;
+	public NotificadorEmail() {
 		System.out.println("NotificadorEmail");
 	}
 	
@@ -18,8 +19,8 @@ public class NotificadorEmail implements Notificador {
 			mensagem = mensagem.toUpperCase();
 		}
 		
-		System.out.printf("Notificando %s através do e-mail %s usando SMTP %s: %s\n", 
-				cliente.getNome(), cliente.getEmail(), hostServidorSmtp, mensagem);
+		System.out.printf("Notificando %s através do e-mail %s: %s\n", 
+				cliente.getNome(), cliente.getEmail(), mensagem);
 	}
 
 	public void setCaixaAlta(boolean caixaAlta) {

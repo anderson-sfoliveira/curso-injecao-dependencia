@@ -1,4 +1,4 @@
-package com.artisapp.curso;
+package com.artisapp.curso.service.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

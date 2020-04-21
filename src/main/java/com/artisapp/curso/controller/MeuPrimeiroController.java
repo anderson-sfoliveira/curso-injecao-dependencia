@@ -1,4 +1,4 @@
-package com.artisapp.curso;
+package com.artisapp.curso.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
