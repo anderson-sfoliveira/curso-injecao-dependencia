@@ -1,14 +1,18 @@
 package com.artisapp.curso;
 
 import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.Configuration;
 
 import com.artisapp.curso.notificacao.NotificadorEmail;
 import com.artisapp.curso.service.AtivacaoClienteService;
 
-@Configuration
 public class AlgaConfig {
 
+	/*
+	 * 
+	 * Como a classe não está mais anotada com @Configuration o Spring não irá gerencia-la.
+	 * Fora criada uma classe específica para cada bean. 
+	 * 
+	 */
 	@Bean
 	public NotificadorEmail notificadorEmail() {
 		System.out.println("AlgaConfig -> notificadorEmail");
