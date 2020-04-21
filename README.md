@@ -15,6 +15,8 @@ Quando o bean a ser instanciado possui um construtor mais complexo, como por exe
 
 Neste caso podemos criar uma classe anotada com @Configuration e metódos anotados com @Bean, quando a aplicação é iniciada esses metédos são executados e neles instanciamos os beans como for necessário.
 
+Por exemplo, no nosso projeto criamos a classe NotificacaoConfig para criar o bean de notificação, pois no construtor da classe NotificadorEmail é necessário passar o valor do atributo caixaAlta.
+
 -------------
 
 Pontos de injeção é onde a gnt pode injetar os objetos dentro do nossos beans.
@@ -28,3 +30,8 @@ Para resolver esse problema anotamos o método/construtor que queremos que seja 
 Os 3 pontos de injeção mais comuns são : pelo construtor, pelo método setter e pelo declaração do atributo/dependência.
 
 O ideal é usar como ponto de injeção, o construtor, pois nele fica claro quais são as dependências do bean.
+
+Mas provavelmente o mais usado é na declaração do atributo/dependência.
+
+---------------
+

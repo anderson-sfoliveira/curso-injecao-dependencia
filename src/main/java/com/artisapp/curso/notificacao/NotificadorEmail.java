@@ -1,15 +1,13 @@
 package com.artisapp.curso.notificacao;
 
-import org.springframework.stereotype.Component;
-
 import com.artisapp.curso.modelo.Cliente;
 
-@Component
 public class NotificadorEmail implements Notificador {
 
 	private boolean caixaAlta;
 	
-	public NotificadorEmail() {
+	public NotificadorEmail(boolean caixaAlta) {
+		this.caixaAlta = caixaAlta;
 		System.out.println("NotificadorEmail");
 	}
 	
@@ -21,10 +19,6 @@ public class NotificadorEmail implements Notificador {
 		
 		System.out.printf("Notificando %s através do e-mail %s: %s\n", 
 				cliente.getNome(), cliente.getEmail(), mensagem);
-	}
-
-	public void setCaixaAlta(boolean caixaAlta) {
-		this.caixaAlta = caixaAlta;
 	}
 	
 }
