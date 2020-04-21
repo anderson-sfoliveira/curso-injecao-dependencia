@@ -31,7 +31,14 @@ Os 3 pontos de injeção mais comuns são : pelo construtor, pelo método setter
 
 O ideal é usar como ponto de injeção, o construtor, pois nele fica claro quais são as dependências do bean.
 
-Mas provavelmente o mais usado é na declaração do atributo/dependência.
+Mas provavelmente o mais usado é na declaração do atributo/dependência. Todos os atributos que são dependência para o bean são anotadas com @Autowired.
 
 ---------------
 
+Dependência opcional com @Autowired
+
+As vezes uma dependência não é obrigatória então anotamos com @Autowired(required = false).
+
+Por exemplo, na classe AtivacaoClienteService colocamos o atributo notificador como opcional e no método de ativar o cliente somente iremos chamar o método notificar caso o atributo notificador tenha uma instância.
+
+----------------
