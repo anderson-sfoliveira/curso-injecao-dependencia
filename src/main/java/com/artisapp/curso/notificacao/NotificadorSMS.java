@@ -1,11 +1,10 @@
 package com.artisapp.curso.notificacao;
 
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
 import com.artisapp.curso.modelo.Cliente;
 
-@Qualifier("URGENTE")
+@TipoDoNotificador(NivelUrgencia.URGENTE)
 @Component
 public class NotificadorSMS implements Notificador {
 
