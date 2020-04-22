@@ -1,6 +1,7 @@
 package com.artisapp.curso.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
 import com.artisapp.curso.modelo.Cliente;
@@ -9,6 +10,7 @@ import com.artisapp.curso.notificacao.Notificador;
 @Component
 public class AtivacaoClienteService {
 
+	@Qualifier("URGENTE")
 	@Autowired(required = false)
 	private Notificador notificador;
 

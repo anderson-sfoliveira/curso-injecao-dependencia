@@ -42,3 +42,17 @@ As vezes uma dependência não é obrigatória então anotamos com @Autowired(re
 Por exemplo, na classe AtivacaoClienteService colocamos o atributo notificador como opcional e no método de ativar o cliente somente iremos chamar o método notificar caso o atributo notificador tenha uma instância.
 
 ----------------
+
+Desambiguação de beans
+
+Caso um bean tenha 2 implementações , como por exemplo da notificação tivesse uma notificaçãoEmail e uma notificaçãoSMS, qual o Spring deveria usar ao instanciar o bean AtivacaoClienteService ? o Spring não saberia e daria erro.
+
+Como resolver:
+
+1ª opção: no bean AtivacaoClienteService criariamos uma lista de notificação para receber todos os beans de notificação.
+
+2ª opção: anotar com @Primary a classe do bean de notificação que deverá ser priorizada e usada em AtivacaoClienteService.
+
+3ª opção: anotar com @Qualifier("uma_descrição") as classes de bean notificação , e na dependência da classe AtivacaoClienteService também anotar com @Qualifier e usar a descrição da classe bean desejada.
+
+
