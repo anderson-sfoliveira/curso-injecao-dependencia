@@ -9,16 +9,16 @@ import com.artisapp.curso.notificacao.Notificador;
 @Component
 public class AtivacaoClienteService {
 
-//	Uma das formas de indicar um ponto de injeção
-//	@Autowired(required = false)
+	@Autowired(required = false)
 	private Notificador notificador;
 
+//	Uma das formas de indicar um ponto de injeção
 //	@Autowired(required = false)	
-	public AtivacaoClienteService(@Autowired(required = false) Notificador notificador) {
-		this.notificador = notificador;
-		
-		System.out.println("AtivacaoClienteService: " + notificador);
-	}
+//	public AtivacaoClienteService(Notificador notificador) {
+//		this.notificador = notificador;
+//		
+//		System.out.println("AtivacaoClienteService: " + notificador);
+//	}
 	
 	public void ativar(Cliente cliente) {
 		cliente.ativar();
