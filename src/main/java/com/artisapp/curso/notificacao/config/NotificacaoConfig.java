@@ -1,11 +1,10 @@
 package com.artisapp.curso.notificacao.config;
 
 import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.Configuration;
 
 import com.artisapp.curso.notificacao.NotificadorEmail;
 
-@Configuration
+//@Configuration
 public class NotificacaoConfig {
 
 	@Bean
