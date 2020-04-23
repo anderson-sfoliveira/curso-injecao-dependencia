@@ -5,20 +5,20 @@ import org.springframework.stereotype.Component;
 
 import com.artisapp.curso.modelo.Cliente;
 
-@Profile("prod")
+@Profile("dev")
 @TipoDoNotificador(NivelUrgencia.SEM_URGENCIA)
 @Component
-public class NotificadorEmail implements Notificador {
+public class NotificadorEmailMock implements Notificador {
 
 	private boolean caixaAlta;
 	
-	public NotificadorEmail() {
-		System.out.println("NotificadorEmail");
+	public NotificadorEmailMock() {
+		System.out.println("NotificadorEmailMock");
 	}
 	
-	public NotificadorEmail(boolean caixaAlta) {
+	public NotificadorEmailMock(boolean caixaAlta) {
 		this.caixaAlta = caixaAlta;
-		System.out.println("NotificadorEmail");
+		System.out.println("NotificadorEmailMock");
 	}
 	
 	@Override
@@ -27,7 +27,7 @@ public class NotificadorEmail implements Notificador {
 			mensagem = mensagem.toUpperCase();
 		}
 		
-		System.out.printf("Notificando %s através do e-mail %s: %s\n", 
+		System.out.printf("MOCK: Cliente seria notificando %s através do e-mail %s: %s\n", 
 				cliente.getNome(), cliente.getEmail(), mensagem);
 	}
 	

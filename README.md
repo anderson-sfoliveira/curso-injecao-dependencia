@@ -43,7 +43,7 @@ Por exemplo, na classe AtivacaoClienteService colocamos o atributo notificador c
 
 ----------------
 
-Desambiguação de beans
+Desambiguação de beans:
 
 Caso um bean tenha 2 implementações , como por exemplo da notificação tivesse uma notificaçãoEmail e uma notificaçãoSMS, qual o Spring deveria usar ao instanciar o bean AtivacaoClienteService ? o Spring não saberia e daria erro.
 
@@ -55,4 +55,15 @@ Como resolver:
 
 3ª opção: anotar com @Qualifier("uma_descrição") as classes de bean notificação , e na dependência da classe AtivacaoClienteService também anotar com @Qualifier e usar a descrição da classe bean desejada.
 
+------------------
+
+Mudando o comportamento da aplicação com Spring Profiles
+
+É como se fosse o @Qualifier porém com a anotação @Profile.
+
+No arquivo de configuração "application.properties" usamos a seguinte configuração:
+
+spring.profiles.active=[nome dos profiles, podendo ser 'n']
+
+É muito usado para controlar os beans que serão gerenciados em modo de produção ou desenvolvido. Ou qual banco de dados será usado.
 
