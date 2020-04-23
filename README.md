@@ -57,7 +57,7 @@ Como resolver:
 
 ------------------
 
-Mudando o comportamento da aplicação com Spring Profiles
+Mudando o comportamento da aplicação com Spring Profiles:
 
 É como se fosse o @Qualifier porém com a anotação @Profile.
 
@@ -66,4 +66,18 @@ No arquivo de configuração "application.properties" usamos a seguinte configur
 spring.profiles.active=[nome dos profiles, podendo ser 'n']
 
 É muito usado para controlar os beans que serão gerenciados em modo de produção ou desenvolvido. Ou qual banco de dados será usado.
+
+-------------------
+
+Criando métodos de callback do ciclo de vida dos beans:
+
+Às vezes é necessário executar algum método após a criação ou destruição do bean, por exemplo.
+
+Uma das formas de fazer isso é usar anotar os métodos com as seguintes anotações:
+
+	@PostConstruct - o método é executado após a criação do bean.
+	@PreDestroy - o método é executação antes da destruição do bean.
+
+É recomendado usar o mesmo nome de métodos em todas as classes de bean.
+
 

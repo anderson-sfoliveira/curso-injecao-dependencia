@@ -27,7 +27,7 @@ public class NotificadorEmailMock implements Notificador {
 			mensagem = mensagem.toUpperCase();
 		}
 		
-		System.out.printf("MOCK: Cliente seria notificando %s através do e-mail %s: %s\n", 
+		System.out.printf("MOCK: SCliente seria notificando %s através do e-mail %s: %s\n", 
 				cliente.getNome(), cliente.getEmail(), mensagem);
 	}
 	
