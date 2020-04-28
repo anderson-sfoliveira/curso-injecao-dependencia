@@ -110,3 +110,16 @@ Para consumir o evento criamos um novo @Component com um método anotado com @Ev
 Precisamos também criar a classe do evento ( neste caso "ClienteAtivadoEvent" ), classe simples, sem anotação do Spring.
 
 -----------------
+
+Criando e acessando propriedades customizadas com @Value:
+
+No arquivo "application.properties" podemos criar variáveis com valores. Exemplo:
+
+notificacao.email.porta-servidor=8811
+
+Para acessar esse valor em alguma classe , a declaração do atributo deve usar a anotação abaixo:
+
+@Value("${notificacao.email.porta-servidor}")
+private Integer porta;
+
+-----------------
