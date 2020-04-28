@@ -80,4 +80,33 @@ Uma das formas de fazer isso é usar anotar os métodos com as seguintes anotaç
 
 É recomendado usar o mesmo nome de métodos em todas as classes de bean.
 
+--------------------
 
+Coesão e Acoplamento - publicando e consumindo eventos customizados:
+
+Coesão está, na verdade, ligado ao princípio da responsabilidade única, que diz que uma classe deve ter apenas uma única responsabilidade e realizá-la de maneira satisfatória, ou seja, uma classe não deve assumir responsabilidades que não são suas. Uma vez sendo ignorado este princípio, passamos a ter problemas, como dificuldades de manutenção e de reuso.
+
+Nosso exemplo a classe "AtivacaoClienteService" tem responsabilidade de notificar o cliente, que não é sua responsabilidade. Então, dizemos que esta classe não está coesa, ou seja, ela tem responsabilidades demais, e o que é pior, responsabilidades que não são suas.
+
+O que temos que ter em mente é que uma classe deve ser responsável por exercer uma única responsabilidade e fazer outras classes cooperarem quando necessário. Já o acoplamento significa o quanto uma classe depende da outra para funcionar. E quanto maior for esta dependência entre ambas, dizemos que estas classes elas estão fortemente acopladas.
+
+Para resolver o problema de coesão e acoplamento do nosso exemplo , precisamos remover a responsabilidade de notificar o cliente da classe "AtivacaoClienteService".
+
+Neste caso publicamos um evento e consumimos ele.
+
+Para criar publir um evento basta criar um objeto abaixo e no momento oportuno chamar o método "publishEvent" passando como parâmetro o objeto do evento.
+
+	private ApplicationEventPublisher eventPublisher;
+
+	eventPublisher.publishEvent(new ClienteAtivadoEvent(cliente));
+
+Para consumir o evento criamos um novo @Component com um método anotado com @EventListener e recebendo como parâmetro o objeto do evento.
+
+	@EventListener
+	public void clienteAtivadoListener(ClienteAtivadoEvent event) {
+		System.out.println("Emitindo nota fiscal para cliente " + event.getCliente().getNome());
+	}
+
+Precisamos também criar a classe do evento ( neste caso "ClienteAtivadoEvent" ), classe simples, sem anotação do Spring.
+
+-----------------
