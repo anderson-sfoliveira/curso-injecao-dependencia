@@ -123,3 +123,16 @@ Para acessar esse valor em alguma classe , a declaração do atributo deve usar 
 private Integer porta;
 
 -----------------
+
+Acessando propriedades com @ConfigurationProperties:
+
+Em projetos grandes utilizar a anotação @Value pode ser trabalhosa pois terá que "injetar" objeto por objeto.
+
+Neste caso podemos criar classe com a anotação @ConfigurationProperties ( para as propriedades de notificacao por exemplo).
+
+Nos atributos dessa classe serão carregadas as propriedades do arquivo "application.properties".
+
+Nas classes que usarão as propriedades somente precisaremos injetar a dependência da classe com a anotação @ConfigurationProprieties.
+
+-----------------
+
