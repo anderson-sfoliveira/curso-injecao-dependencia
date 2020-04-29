@@ -136,3 +136,10 @@ Nas classes que usarão as propriedades somente precisaremos injetar a dependên
 
 -----------------
 
+Alterando a configuração do projeto dependendo do ambiente (com Spring Profiles):
+
+Podemos criar arquivos como "application-development.properties", "application-dev.properties" e etc.
+
+Podemos ativar essas propriedade configurando no "application.properties" o profile desejado ( development ou dev, por exemplo ).
+
+-----------------
