@@ -206,8 +206,6 @@ Podemos criar arquivos como "application-development.properties", "application-d
 
 Podemos ativar essas propriedade configurando no "application.properties" o profile desejado ( development ou dev, por exemplo ).
 
------------------
-
 ---
 
 ## 👨🏽‍💻 Autor
