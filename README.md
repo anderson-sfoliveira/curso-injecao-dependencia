@@ -15,7 +15,7 @@
   - [Pré-requisitos](#pré-requisitos)
   - [Rodando o projeto](#user-content--rodando-o-projeto)
 - [Tecnologias](#-tecnologias)
-- [Anotações](#-anotacoes)
+- [Anotações](#-anotações)
 - [Autor](#-autor)
 <!--te-->
 
